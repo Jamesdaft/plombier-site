@@ -72,6 +72,7 @@ img { max-width: 100%; display: block; }
   display: inline-flex;
   align-items: center;
   gap: 10px;
+  white-space: nowrap;
   background: transparent;
   color: var(--white);
   font-family: 'Montserrat', sans-serif;
@@ -82,6 +83,7 @@ img { max-width: 100%; display: block; }
   border: 2px solid rgba(255,255,255,0.5);
   transition: border-color 0.2s, background 0.2s;
 }
+.btn-secondary svg { width: 20px; height: 20px; flex-shrink: 0; }
 .btn-secondary:hover {
   border-color: var(--white);
   background: rgba(255,255,255,0.1);
