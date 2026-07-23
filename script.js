@@ -76,6 +76,54 @@ document.querySelectorAll('.service-card, .contact-card, .about-card').forEach(e
     });
 })();
 
+// ===== BLOG CAROUSEL =====
+(function () {
+  const track    = document.getElementById('blogTrack');
+  const dotsWrap = document.getElementById('blogDots');
+  if (!track) return;
+
+  const slides = Array.from(track.querySelectorAll('.blog-slide'));
+  const total  = slides.length;
+  let current  = 0;
+
+  slides.forEach((_, i) => {
+    const dot = document.createElement('button');
+    dot.className = 'gallery-dot' + (i === 0 ? ' active' : '');
+    dot.setAttribute('aria-label', 'Article ' + (i + 1));
+    dot.addEventListener('click', () => goTo(i));
+    dotsWrap.appendChild(dot);
+  });
+
+  function updateDots() {
+    dotsWrap.querySelectorAll('.gallery-dot').forEach((d, i) => {
+      d.classList.toggle('active', i === current);
+    });
+  }
+
+  function goTo(index) {
+    current = (index + total) % total;
+    const slideW = slides[current].offsetWidth + 24;
+    track.scrollTo({ left: current * slideW, behavior: 'smooth' });
+    updateDots();
+  }
+
+  document.querySelector('.blog-prev').addEventListener('click', () => goTo(current - 1));
+  document.querySelector('.blog-next').addEventListener('click', () => goTo(current + 1));
+
+  track.addEventListener('scroll', () => {
+    const slideW = slides[0].offsetWidth + 24;
+    const idx = Math.round(track.scrollLeft / slideW);
+    if (idx !== current) { current = idx; updateDots(); }
+  }, { passive: true });
+
+  let startX = 0;
+  track.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, { passive: true });
+  track.addEventListener('touchend', e => {
+    const diff = startX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 50) goTo(current + (diff > 0 ? 1 : -1));
+  });
+})();
+
 // ===== GALLERY CAROUSEL =====
 (function () {
   const track    = document.getElementById('galleryTrack');
