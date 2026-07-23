@@ -51,6 +51,8 @@ img { max-width: 100%; display: block; }
   display: inline-flex;
   align-items: center;
   gap: 10px;
+  white-space: nowrap;
+  flex-shrink: 0;
   background: var(--red);
   color: var(--white);
   font-family: 'Montserrat', sans-serif;
@@ -73,6 +75,7 @@ img { max-width: 100%; display: block; }
   align-items: center;
   gap: 10px;
   white-space: nowrap;
+  flex-shrink: 0;
   background: transparent;
   color: var(--white);
   font-family: 'Montserrat', sans-serif;
@@ -344,7 +347,7 @@ img { max-width: 100%; display: block; }
 
 .hero-cta {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   gap: 16px;
   justify-content: center;
 }
