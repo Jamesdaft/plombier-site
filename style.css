@@ -854,6 +854,7 @@ img { max-width: 100%; display: block; }
 @media (max-width: 768px) {
   .mobile-bar { display: flex; }
   .btn-nav { display: none !important; }
+  .hero-cta { display: none !important; }
   body { padding-bottom: 72px; }
 }
 
