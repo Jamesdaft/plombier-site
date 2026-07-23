@@ -49,7 +49,7 @@
   <link rel="apple-touch-icon" href="img/LOGO.png" />
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <link rel="stylesheet" href="https://unpkg.com/leaflet-gesture-handling/dist/leaflet-gesture-handling.min.css" />
-  <link rel="stylesheet" href="style.css?v=11" />
+  <link rel="stylesheet" href="style.css?v=12" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet" />
 </head>
@@ -65,6 +65,7 @@
       <ul class="nav-links">
         <li><a href="#services">Services</a></li>
         <li><a href="#about">À propos</a></li>
+        <li><a href="#blog">Blog</a></li>
         <li><a href="#contact">Contact</a></li>
         <li><a href="#devis" class="btn-nav btn-nav-devis">Devis gratuit</a></li>
         <li><a href="tel:+33771806082" class="btn-nav">07 71 80 60 82</a></li>
@@ -395,6 +396,73 @@
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
           Laisser un avis Google
         </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOG -->
+  <section class="blog" id="blog">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Conseils & obligations</span>
+        <h2>Mon <span>blog</span></h2>
+        <p>Obligations légales, guides pratiques et conseils pour vos installations</p>
+      </div>
+      <div class="blog-grid">
+
+        <article class="blog-card">
+          <div class="blog-card-icon">
+            <svg viewBox="0 0 64 64" fill="none">
+              <circle cx="32" cy="32" r="30" fill="#FDEAEA"/>
+              <path d="M32 18 C29 23 25 28 25 32 C25 37 28.1 41 32 41 C35.9 41 39 37 39 32 C39 28 35 23 32 18Z" stroke="#C0392B" stroke-width="2.5" stroke-linecap="round" fill="rgba(192,57,43,0.08)"/>
+              <path d="M29 36 C29 34 30.5 32 32 30" stroke="#C0392B" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="blog-card-body">
+            <span class="blog-tag obligatoire">Obligation légale</span>
+            <h3>Entretien de chaudière : pourquoi c'est obligatoire</h3>
+            <p>Chaque année, l'entretien de votre chaudière gaz ou fioul est imposé par la loi. Amendes, sécurité, économies : tout ce que vous devez savoir.</p>
+            <a href="entretien-chaudiere-hautes-alpes.html" class="blog-link">Lire l'article <svg viewBox="0 0 24 24" fill="currentColor"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg></a>
+          </div>
+        </article>
+
+        <article class="blog-card">
+          <div class="blog-card-icon">
+            <svg viewBox="0 0 64 64" fill="none">
+              <circle cx="32" cy="32" r="30" fill="#E8F0F8"/>
+              <path d="M32 20 L32 18" stroke="#2E6DA4" stroke-width="2.5" stroke-linecap="round"/>
+              <path d="M40.5 23.5 L41.9 22.1" stroke="#2E6DA4" stroke-width="2.5" stroke-linecap="round"/>
+              <path d="M23.5 23.5 L22.1 22.1" stroke="#2E6DA4" stroke-width="2.5" stroke-linecap="round"/>
+              <path d="M20 32 L18 32" stroke="#2E6DA4" stroke-width="2.5" stroke-linecap="round"/>
+              <path d="M44 32 L46 32" stroke="#2E6DA4" stroke-width="2.5" stroke-linecap="round"/>
+              <circle cx="32" cy="32" r="9" stroke="#2E6DA4" stroke-width="2.5" fill="rgba(46,109,164,0.1)"/>
+              <path d="M32 36 C32 36 28 40 28 42.5 C28 44.98 29.79 47 32 47 C34.21 47 36 44.98 36 42.5 C36 40 32 36 32 36Z" fill="#2E6DA4" opacity="0.5"/>
+            </svg>
+          </div>
+          <div class="blog-card-body">
+            <span class="blog-tag obligatoire">Obligation légale</span>
+            <h3>Entretien climatisation : ce que dit la loi</h3>
+            <p>Au-delà du confort, votre climatisation peut être soumise à une inspection obligatoire. Découvrez qui est concerné et ce que ça implique.</p>
+            <a href="entretien-climatisation-hautes-alpes.html" class="blog-link">Lire l'article <svg viewBox="0 0 24 24" fill="currentColor"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg></a>
+          </div>
+        </article>
+
+        <article class="blog-card">
+          <div class="blog-card-icon">
+            <svg viewBox="0 0 64 64" fill="none">
+              <circle cx="32" cy="32" r="30" fill="#E8F0F8"/>
+              <path d="M32 14 C28 20 22 27 22 33 C22 39.6 26.5 45 32 45 C37.5 45 42 39.6 42 33 C42 27 36 20 32 14Z" fill="#2E6DA4" opacity="0.15" stroke="#2E6DA4" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M26 36 C26 34 28.5 31 32 29" stroke="#2E6DA4" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="blog-card-body">
+            <span class="blog-tag conseille">Conseil pratique</span>
+            <h3>Adoucisseur d'eau : protégez vos installations du calcaire</h3>
+            <p>Le calcaire abîme silencieusement vos canalisations et vos appareils. Un adoucisseur bien posé peut vous faire économiser des centaines d'euros.</p>
+            <a href="adoucisseur-eau-hautes-alpes.html" class="blog-link">Lire l'article <svg viewBox="0 0 24 24" fill="currentColor"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg></a>
+          </div>
+        </article>
+
       </div>
     </div>
   </section>
