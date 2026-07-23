@@ -47,7 +47,8 @@
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <link rel="icon" type="image/png" href="img/LOGO.png" />
   <link rel="apple-touch-icon" href="img/LOGO.png" />
-  <link rel="stylesheet" href="style.css?v=7" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="style.css?v=8" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet" />
 </head>
@@ -257,19 +258,19 @@
     <div class="container">
       <div class="section-header">
         <span class="section-tag">Zone d'intervention</span>
-        <h2>Je me déplace dans tout le <span>département 05</span></h2>
-        <p>Plombier chauffagiste disponible dans toutes les Hautes-Alpes</p>
+        <h2>Je me déplace <span>autour de Gap</span></h2>
+        <p>Plombier chauffagiste disponible dans un rayon d'environ 60 km</p>
       </div>
-      <div class="zones-grid">
-        <span>Gap</span><span>Briançon</span><span>Embrun</span><span>Guillestre</span>
-        <span>Veynes</span><span>Laragne-Montéglin</span><span>Tallard</span><span>Chorges</span>
-        <span>Savines-le-Lac</span><span>L'Argentière-la-Bessée</span><span>Vallouise-Pelvoux</span>
-        <span>Serre-Chevalier</span><span>Montgenèvre</span><span>Vars</span><span>Risoul</span>
-        <span>Serres</span><span>Aspres-sur-Buëch</span><span>Saint-Bonnet-en-Champsaur</span>
-        <span>Le Monêtier-les-Bains</span><span>Mont-Dauphin</span><span>La Roche-de-Rame</span>
-        <span>Réallon</span><span>Eyguians</span><span>Saint-Étienne-en-Dévoluy</span>
+    </div>
+    <div class="zones-map-wrap">
+      <div id="map"></div>
+      <div class="zones-map-badge">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+        <span>Gap & alentours — ~60 km</span>
       </div>
-      <p class="zones-note">Et toutes les communes alentour — <a href="tel:+33771806082">appelez-moi</a> pour vérifier votre secteur</p>
+    </div>
+    <div class="container">
+      <p class="zones-note">Une question sur votre secteur ? <a href="tel:+33771806082">Appelez-moi directement</a></p>
     </div>
   </section>
 
@@ -555,6 +556,7 @@
     </a>
   </div>
 
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
