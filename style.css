@@ -141,7 +141,10 @@ img { max-width: 100%; display: block; }
   padding: 0;
   background: rgba(255,255,255,0);
   backdrop-filter: blur(0px);
-  transition: background 0.3s, backdrop-filter 0.3s, box-shadow 0.3s;
+  transition: background 0.4s ease, backdrop-filter 0.4s ease, box-shadow 0.4s ease;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  will-change: transform;
 }
 .navbar.scrolled {
   background: rgba(255,255,255,0.97);
@@ -831,6 +834,11 @@ img { max-width: 100%; display: block; }
   z-index: 9999;
   box-shadow: 0 -4px 20px rgba(0,0,0,0.2);
   padding-bottom: env(safe-area-inset-bottom);
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
 .mobile-bar-btn {
