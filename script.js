@@ -32,6 +32,49 @@ document.querySelectorAll('.service-card, .contact-card, .about-card').forEach(e
   observer.observe(el);
 });
 
+// ===== CARTE ISOCHRONE 30 MIN =====
+(function () {
+  if (!document.getElementById('map')) return;
+
+  const map = L.map('map', { zoomControl: true, scrollWheelZoom: false });
+
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+    attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> © <a href="https://carto.com/">CARTO</a>',
+    maxZoom: 18
+  }).addTo(map);
+
+  const epcIcon = L.divIcon({
+    className: '',
+    html: `<div style="background:linear-gradient(135deg,#C0392B,#2E6DA4);width:38px;height:38px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);box-shadow:0 4px 14px rgba(0,0,0,0.25);border:3px solid white;display:flex;align-items:center;justify-content:center;">
+      <span style="transform:rotate(45deg);color:white;font-weight:900;font-size:11px;font-family:Montserrat,sans-serif;">EPC</span>
+    </div>`,
+    iconSize: [38, 38],
+    iconAnchor: [19, 38],
+    popupAnchor: [0, -40]
+  });
+
+  fetch('isochrone.json')
+    .then(r => r.json())
+    .then(data => {
+      const iso = L.geoJSON(data, {
+        style: {
+          color: '#2E6DA4',
+          weight: 2,
+          dashArray: '6 4',
+          fillColor: '#2E6DA4',
+          fillOpacity: 0.18
+        }
+      }).addTo(map);
+
+      map.fitBounds(iso.getBounds(), { padding: [30, 30] });
+
+      L.marker([44.466096, 6.122948], { icon: epcIcon })
+        .addTo(map)
+        .bindPopup('<strong style="font-family:Montserrat,sans-serif;color:#2E6DA4">EPC – Eliott Van Holderbeke</strong><br>Plombier Chauffagiste<br>📞 07 71 80 60 82', { maxWidth: 200 })
+        .openPopup();
+    });
+})();
+
 // ===== GALLERY CAROUSEL =====
 (function () {
   const track    = document.getElementById('galleryTrack');

@@ -47,7 +47,8 @@
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <link rel="icon" type="image/png" href="img/LOGO.png" />
   <link rel="apple-touch-icon" href="img/LOGO.png" />
-  <link rel="stylesheet" href="style.css?v=10" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="style.css?v=11" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet" />
 </head>
@@ -262,7 +263,7 @@
       </div>
     </div>
     <div class="zones-map-wrap">
-      <iframe id="map" src="https://www.openstreetmap.org/export/embed.html?bbox=5.31%2C44.02%2C6.85%2C45.10&layer=mapnik&marker=44.5592%2C6.0798" title="Zone d'intervention EPC – Gap et Hautes-Alpes" loading="lazy" style="border:0;" allowfullscreen></iframe>
+      <div id="map"></div>
       <div class="zones-map-badge">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
         <span>Gap & alentours — ~60 km</span>
@@ -555,6 +556,7 @@
     </a>
   </div>
 
-  <script src="script.js"></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="script.js?v=11"></script>
 </body>
 </html>

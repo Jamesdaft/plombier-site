@@ -714,8 +714,6 @@ img { max-width: 100%; display: block; }
 #map {
   height: 440px;
   width: 100%;
-  border: none;
-  display: block;
   z-index: 1;
 }
 
