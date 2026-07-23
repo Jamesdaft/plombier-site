@@ -1,0 +1,143 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 560" width="500" height="560">
+  <defs>
+    <linearGradient id="flameRed" x1="0.5" y1="0" x2="0.5" y2="1">
+      <stop offset="0%" stop-color="#C0392B"/>
+      <stop offset="100%" stop-color="#E74C3C"/>
+    </linearGradient>
+    <linearGradient id="bodyBlue" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#3A8FD4"/>
+      <stop offset="100%" stop-color="#1D4F7C"/>
+    </linearGradient>
+    <linearGradient id="diagGrad" x1="1" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#C0392B"/>
+      <stop offset="40%" stop-color="#9B59B6" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#2E6DA4"/>
+    </linearGradient>
+    <filter id="dropshadow">
+      <feDropShadow dx="0" dy="8" stdDeviation="16" flood-color="rgba(0,0,0,0.22)"/>
+    </filter>
+    <!-- Clip to overall shape -->
+    <clipPath id="mainShape">
+      <path d="
+        M250,30
+        C250,30 310,90 335,155
+        C355,205 345,245 360,275
+        C385,320 395,355 390,385
+        C380,440 330,490 250,490
+        C170,490 120,440 110,385
+        C105,355 115,320 140,275
+        C155,245 145,205 165,155
+        C190,90 250,30 250,30Z
+      "/>
+    </clipPath>
+  </defs>
+
+  <!-- ====== MAIN FLAME/DROP SHAPE ====== -->
+  <g filter="url(#dropshadow)">
+
+    <!-- Blue base body -->
+    <path d="
+      M250,30
+      C250,30 310,90 335,155
+      C355,205 345,245 360,275
+      C385,320 395,355 390,385
+      C380,440 330,490 250,490
+      C170,490 120,440 110,385
+      C105,355 115,320 140,275
+      C155,245 145,205 165,155
+      C190,90 250,30 250,30Z
+    " fill="url(#bodyBlue)"/>
+
+    <!-- Red flame top (triangular-ish, upper half) -->
+    <path d="
+      M250,30
+      C250,30 298,80 318,138
+      C330,175 322,210 316,238
+      C290,220 265,210 250,210
+      C235,210 210,220 184,238
+      C178,210 170,175 182,138
+      C202,80 250,30 250,30Z
+    " fill="url(#flameRed)"/>
+
+    <!-- Diagonal blend: red bleeds into blue body -->
+    <path d="
+      M316,238
+      C295,225 268,215 250,215
+      C232,215 205,225 184,238
+      C165,252 150,268 140,285
+      C130,302 118,340 112,378
+      C130,320 170,280 250,265
+      C330,280 370,320 388,378
+      C382,340 370,302 360,285
+      C350,268 335,252 316,238Z
+    " fill="url(#diagGrad)" opacity="0.5"/>
+
+  </g>
+
+  <!-- ====== WHITE MOUNTAINS (clipped inside shape) ====== -->
+  <g clip-path="url(#mainShape)">
+
+    <!-- Mountain silhouette -->
+    <path d="
+      M100,330
+      L170,230
+      L210,278
+      L250,210
+      L290,278
+      L330,230
+      L400,330
+      L400,360
+      L100,360Z
+    " fill="white" opacity="0.93"/>
+
+    <!-- Snow peaks highlights -->
+    <path d="M250,210 L268,248 L250,238 L232,248Z" fill="white"/>
+    <path d="M170,230 L186,256 L170,248 L154,256Z" fill="white" opacity="0.7"/>
+    <path d="M330,230 L346,256 L330,248 L314,256Z" fill="white" opacity="0.7"/>
+
+  </g>
+
+  <!-- ====== WHITE WRENCH (clipped inside shape) ====== -->
+  <g clip-path="url(#mainShape)">
+    <!--
+      Wrench: handle going from bottom-left to top-right
+      Head (open jaw) at top-left, round end at bottom-right
+    -->
+    <g transform="translate(250,390) rotate(-40)">
+      <!-- Handle -->
+      <rect x="-18" y="-95" width="36" height="155" rx="10" fill="white" opacity="0.92"/>
+      <!-- Jaw left arm -->
+      <path d="
+        M-18,-95
+        C-38,-95 -52,-82 -52,-64
+        C-52,-52 -44,-44 -32,-42
+        L-18,-38 L-18,-95Z
+      " fill="white" opacity="0.92"/>
+      <!-- Jaw right arm -->
+      <path d="
+        M18,-95
+        C38,-95 52,-82 52,-64
+        C52,-52 44,-44 32,-42
+        L18,-38 L18,-95Z
+      " fill="white" opacity="0.92"/>
+      <!-- Gap between jaws (dark cutout) -->
+      <rect x="-54" y="-70" width="108" height="10" rx="3" fill="#1D4F7C" opacity="0.5"/>
+      <!-- Round end cap -->
+      <ellipse cx="0" cy="62" rx="20" ry="20" fill="white" opacity="0.92"/>
+      <ellipse cx="0" cy="62" rx="10" ry="10" fill="#1D4F7C" opacity="0.5"/>
+    </g>
+  </g>
+
+  <!-- ====== EPC TEXT ====== -->
+  <text
+    x="250"
+    y="546"
+    text-anchor="middle"
+    font-family="'Arial Black', 'Montserrat', sans-serif"
+    font-weight="900"
+    font-size="66"
+    letter-spacing="12"
+    fill="#C0392B"
+  >EPC</text>
+
+</svg>
