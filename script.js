@@ -66,7 +66,7 @@ document.querySelectorAll('.service-card, .contact-card, .about-card').forEach(e
         }
       }).addTo(map);
 
-      map.fitBounds(iso.getBounds(), { padding: [-30, -30] });
+      map.fitBounds(iso.getBounds(), { padding: [-80, -80] });
 
       L.marker([44.466096, 6.122948], { icon: epcIcon })
         .addTo(map)
