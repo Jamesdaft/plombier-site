@@ -232,25 +232,35 @@ img { max-width: 100%; display: block; }
 .hero-bg {
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, var(--slate) 0%, var(--slate-mid) 40%, var(--blue-dark) 70%, var(--blue) 100%);
+  background: linear-gradient(165deg, #1A2535 0%, #1E3251 40%, #1D4F7C 75%, #2E6DA4 100%);
   z-index: 0;
 }
+
+/* Lueur rouge haut-gauche + étoiles */
 .hero-bg::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse at 70% 30%, rgba(192,57,43,0.25) 0%, transparent 60%),
-              radial-gradient(ellipse at 20% 80%, rgba(201,168,76,0.1) 0%, transparent 50%);
+  background:
+    radial-gradient(ellipse at 10% 12%, rgba(192,57,43,0.32) 0%, transparent 42%),
+    radial-gradient(ellipse at 88% 8%,  rgba(46,109,164,0.18) 0%, transparent 38%),
+    url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 800'><circle cx='120' cy='80'  r='1.2' fill='rgba(255,255,255,0.5)'/><circle cx='280' cy='140' r='1'   fill='rgba(255,255,255,0.4)'/><circle cx='450' cy='60'  r='1.5' fill='rgba(255,255,255,0.45)'/><circle cx='620' cy='110' r='1'   fill='rgba(255,255,255,0.35)'/><circle cx='800' cy='50'  r='1.2' fill='rgba(255,255,255,0.5)'/><circle cx='950' cy='130' r='1'   fill='rgba(255,255,255,0.4)'/><circle cx='1100' cy='70' r='1.5' fill='rgba(255,255,255,0.45)'/><circle cx='1300' cy='100' r='1' fill='rgba(255,255,255,0.35)'/><circle cx='200' cy='180' r='0.8' fill='rgba(255,255,255,0.3)'/><circle cx='700' cy='170' r='0.8' fill='rgba(255,255,255,0.3)'/><circle cx='1200' cy='160' r='1' fill='rgba(255,255,255,0.35)'/></svg>") no-repeat top center / cover;
 }
+
+/* Montagnes + vague bas */
 .hero-bg::after {
   content: '';
   position: absolute;
-  bottom: -2px;
-  left: 0;
-  right: 0;
-  height: 100px;
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 100'%3E%3Cpath fill='%23F7F9FC' d='M0 100 C360 0 1080 0 1440 100 Z'/%3E%3C/svg%3E") no-repeat bottom center;
-  background-size: cover;
+  inset: 0;
+  background:
+    /* Vague de transition bas */
+    url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 120'><path fill='%23F7F9FC' d='M0 120 C480 0 960 0 1440 120 Z'/></svg>") no-repeat bottom center / cover,
+    /* Montagnes premier plan - sombres */
+    url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 600'><path d='M0 560 L75 425 L125 468 L195 388 L265 448 L338 372 L415 442 L488 368 L568 448 L648 378 L728 458 L805 392 L882 468 L960 402 L1042 482 L1122 418 L1202 496 L1282 430 L1362 508 L1440 450 L1440 600 L0 600 Z' fill='rgba(18,38,72,0.82)'/><path d='M195 388 L213 416 L195 408 L177 416 Z' fill='rgba(255,255,255,0.25)'/><path d='M338 372 L356 402 L338 393 L320 402 Z' fill='rgba(255,255,255,0.22)'/><path d='M488 368 L507 398 L488 390 L469 398 Z' fill='rgba(255,255,255,0.25)'/><path d='M648 378 L668 408 L648 400 L628 408 Z' fill='rgba(255,255,255,0.2)'/><path d='M805 392 L825 422 L805 413 L785 422 Z' fill='rgba(255,255,255,0.22)'/><path d='M960 402 L980 432 L960 423 L940 432 Z' fill='rgba(255,255,255,0.2)'/><path d='M1122 418 L1142 448 L1122 439 L1102 448 Z' fill='rgba(255,255,255,0.22)'/><path d='M1282 430 L1302 460 L1282 451 L1262 460 Z' fill='rgba(255,255,255,0.2)'/></svg>") no-repeat bottom center / cover,
+    /* Montagnes plan milieu */
+    url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 600'><path d='M0 490 L65 358 L105 398 L168 305 L232 368 L295 285 L368 352 L432 272 L502 342 L572 268 L645 338 L712 260 L782 332 L852 258 L922 330 L995 262 L1068 338 L1138 268 L1210 345 L1280 278 L1355 355 L1440 295 L1440 600 L0 600 Z' fill='rgba(28,58,108,0.55)'/><path d='M168 305 L184 332 L168 324 L152 332 Z' fill='rgba(255,255,255,0.18)'/><path d='M295 285 L312 315 L295 306 L278 315 Z' fill='rgba(255,255,255,0.2)'/><path d='M432 272 L450 304 L432 294 L414 304 Z' fill='rgba(255,255,255,0.18)'/><path d='M572 268 L590 300 L572 290 L554 300 Z' fill='rgba(255,255,255,0.2)'/><path d='M712 260 L730 292 L712 282 L694 292 Z' fill='rgba(255,255,255,0.18)'/><path d='M852 258 L870 292 L852 280 L834 292 Z' fill='rgba(255,255,255,0.2)'/><path d='M995 262 L1014 295 L995 285 L976 295 Z' fill='rgba(255,255,255,0.18)'/><path d='M1138 268 L1157 302 L1138 291 L1119 302 Z' fill='rgba(255,255,255,0.2)'/><path d='M1280 278 L1300 312 L1280 301 L1260 312 Z' fill='rgba(255,255,255,0.18)'/></svg>") no-repeat bottom center / cover,
+    /* Montagnes lointaines */
+    url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 600'><path d='M0 430 L55 268 L88 308 L148 228 L202 278 L258 195 L312 248 L370 185 L425 238 L482 172 L538 228 L595 165 L652 220 L710 160 L768 215 L828 158 L888 214 L948 162 L1008 218 L1068 165 L1128 222 L1188 168 L1248 226 L1308 172 L1370 230 L1440 185 L1440 600 L0 600 Z' fill='rgba(40,75,135,0.28)'/></svg>") no-repeat bottom center / cover;
 }
 
 .hero-content {
