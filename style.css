@@ -699,6 +699,112 @@ img { max-width: 100%; display: block; }
 }
 
 /* ========================
+   TEMOIGNAGES
+   ======================== */
+.temoignages {
+  background: linear-gradient(165deg, #1A2535 0%, #1E3251 40%, #1D4F7C 75%, #2E6DA4 100%);
+  padding: 100px 0 80px;
+  position: relative;
+  overflow: hidden;
+}
+.temoignages::before {
+  content: '';
+  position: absolute;
+  top: -80px; right: -80px;
+  width: 320px; height: 320px;
+  border-radius: 50%;
+  background: rgba(192,57,43,0.1);
+}
+.temoignages .section-header h2,
+.temoignages .section-header p { color: var(--white); }
+.temoignages .section-tag { color: var(--gold); background: rgba(201,168,76,0.15); }
+
+.temoignages-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  position: relative;
+  z-index: 1;
+}
+
+.temoignage-card {
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 18px;
+  padding: 32px 28px;
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  transition: background 0.3s, transform 0.3s;
+}
+.temoignage-card:hover {
+  background: rgba(255,255,255,0.12);
+  transform: translateY(-4px);
+}
+
+.temoignage-stars {
+  display: flex;
+  gap: 4px;
+}
+.temoignage-stars svg {
+  width: 18px;
+  height: 18px;
+  color: var(--gold);
+}
+
+.temoignage-texte {
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.85);
+  line-height: 1.75;
+  font-style: italic;
+  flex: 1;
+}
+
+.temoignage-auteur {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.temoignage-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--red), var(--blue));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+  font-size: 1.1rem;
+  color: var(--white);
+  flex-shrink: 0;
+}
+.temoignage-auteur strong {
+  display: block;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--white);
+}
+.temoignage-auteur span {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.45);
+}
+
+.temoignage-note {
+  text-align: center;
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.3);
+  font-style: italic;
+  margin-top: 32px;
+}
+
+@media (max-width: 900px) {
+  .temoignages-grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; }
+}
+
+/* ========================
    GALERIE
    ======================== */
 .gallery {
