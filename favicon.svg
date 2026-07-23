@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="g" x1="0.3" y1="0" x2="0.7" y2="1">
+      <stop offset="0%" stop-color="#C0392B"/>
+      <stop offset="100%" stop-color="#2E6DA4"/>
+    </linearGradient>
+  </defs>
+  <!-- Flamme -->
+  <path d="M32 4 C32 4 44 16 46 28 C48 36 44 42 50 50 C50 50 40 56 32 56 C24 56 14 50 14 50 C20 42 16 36 18 28 C20 16 32 4 32 4 Z" fill="url(#g)"/>
+  <!-- Lettre E -->
+  <text x="20" y="42" font-family="Arial Black, sans-serif" font-weight="900" font-size="22" fill="white" letter-spacing="-1">E</text>
+</svg>
