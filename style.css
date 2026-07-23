@@ -711,21 +711,24 @@ img { max-width: 100%; display: block; }
   position: relative;
   display: flex;
   align-items: center;
-  gap: 0;
   margin: 0 0 28px;
 }
 
 .gallery-track {
   display: flex;
   gap: 20px;
-  overflow: hidden;
-  padding: 12px 60px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding: 12px 24px;
   flex: 1;
-  will-change: transform;
 }
+.gallery-track::-webkit-scrollbar { display: none; }
 
 .gallery-slide {
   flex: 0 0 calc(33.333% - 14px);
+  min-width: 260px;
   border-radius: 16px;
   overflow: hidden;
   box-shadow: var(--shadow);
