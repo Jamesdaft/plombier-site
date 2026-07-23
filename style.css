@@ -196,6 +196,13 @@ img { max-width: 100%; display: block; }
   transform: translateY(-1px);
   box-shadow: 0 6px 20px rgba(192,57,43,0.4) !important;
 }
+.btn-nav-devis {
+  background: var(--blue) !important;
+  box-shadow: 0 4px 14px rgba(46,109,164,0.3) !important;
+}
+.btn-nav-devis:hover {
+  box-shadow: 0 6px 20px rgba(46,109,164,0.45) !important;
+}
 
 .burger {
   display: none;
