@@ -293,6 +293,16 @@ img { max-width: 100%; display: block; }
 }
 .hero-content h1 span { color: var(--gold); }
 
+.hero-name {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: rgba(255,255,255,0.65);
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+  margin-top: -8px;
+}
+
 .hero-slogan {
   font-size: 1.2rem;
   color: rgba(255,255,255,0.8);
