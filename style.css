@@ -509,6 +509,34 @@ img { max-width: 100%; display: block; }
   padding: 2px;
 }
 
+.about-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  align-items: center;
+}
+
+.btn-about-devis {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  white-space: nowrap;
+  background: transparent;
+  color: var(--blue);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 15px 28px;
+  border-radius: 50px;
+  border: 2px solid var(--blue);
+  transition: background 0.2s, color 0.2s;
+}
+.btn-about-devis svg { width: 18px; height: 18px; flex-shrink: 0; }
+.btn-about-devis:hover {
+  background: var(--blue);
+  color: var(--white);
+}
+
 .about-card {
   background: linear-gradient(135deg, var(--slate) 0%, var(--slate-mid) 50%, var(--blue-dark) 100%);
   border-radius: 20px;
