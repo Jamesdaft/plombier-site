@@ -55,7 +55,7 @@ document.querySelectorAll('.service-card, .contact-card, .about-card').forEach(e
 
   // Pane dédié pour le fondu des bords
   map.createPane('isoPane');
-  map.getPane('isoPane').style.filter = 'blur(14px)';
+  map.getPane('isoPane').style.filter = 'blur(10px)';
   map.getPane('isoPane').style.zIndex = '400';
 
   fetch('isochrone.json')
@@ -67,7 +67,7 @@ document.querySelectorAll('.service-card, .contact-card, .about-card').forEach(e
           color: 'transparent',
           weight: 0,
           fillColor: '#2E6DA4',
-          fillOpacity: 0.28
+          fillOpacity: 0.55
         }
       }).addTo(map);
 
