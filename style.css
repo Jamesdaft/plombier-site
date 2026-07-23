@@ -277,12 +277,14 @@ img { max-width: 100%; display: block; }
 }
 
 .hero-logo {
-  width: 100px;
-  height: 100px;
+  width: 110px;
+  height: 110px;
   object-fit: contain;
   margin: 0 auto 24px;
   filter: drop-shadow(0 8px 24px rgba(0,0,0,0.3));
   animation: floatLogo 4s ease-in-out infinite;
+  -webkit-mask-image: radial-gradient(ellipse 78% 78% at center, black 55%, transparent 100%);
+  mask-image: radial-gradient(ellipse 78% 78% at center, black 55%, transparent 100%);
 }
 
 @keyframes floatLogo {
