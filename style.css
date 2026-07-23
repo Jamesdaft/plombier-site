@@ -825,6 +825,9 @@ img { max-width: 100%; display: block; }
 }
 
 @media (max-width: 768px) {
+  /* Cacher les boutons nav redondants avec la barre du bas */
+  .btn-nav { display: none !important; }
+
   .mobile-bar {
     display: flex;
     position: fixed;
