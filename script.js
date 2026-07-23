@@ -36,7 +36,7 @@ document.querySelectorAll('.service-card, .contact-card, .about-card').forEach(e
 (function () {
   if (!document.getElementById('map')) return;
 
-  const map = L.map('map', { zoomControl: true, scrollWheelZoom: false });
+  const map = L.map('map', { gestureHandling: true, scrollWheelZoom: false });
 
   L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
     attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> © <a href="https://carto.com/">CARTO</a>',
