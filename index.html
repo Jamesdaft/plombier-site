@@ -54,6 +54,7 @@
       <ul class="nav-links">
         <li><a href="#services">Services</a></li>
         <li><a href="#about">À propos</a></li>
+        <li><a href="#devis">Devis</a></li>
         <li><a href="#contact">Contact</a></li>
         <li><a href="tel:+33771806082" class="btn-nav">07 71 80 60 82</a></li>
       </ul>
@@ -230,6 +231,60 @@
           </div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- DEVIS -->
+  <section class="devis" id="devis">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Devis gratuit</span>
+        <h2>Demande de <span>devis</span></h2>
+        <p>Réponse sous 24h, sans engagement</p>
+      </div>
+      <form class="devis-form" name="devis" method="POST" netlify data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="devis" />
+        <p class="hidden"><label>Ne pas remplir : <input name="bot-field" /></label></p>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="nom">Nom complet *</label>
+            <input type="text" id="nom" name="nom" placeholder="Jean Dupont" required />
+          </div>
+          <div class="form-group">
+            <label for="telephone">Téléphone *</label>
+            <input type="tel" id="telephone" name="telephone" placeholder="06 00 00 00 00" required />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="votre@email.fr" />
+          </div>
+          <div class="form-group">
+            <label for="service">Type de prestation *</label>
+            <select id="service" name="service" required>
+              <option value="" disabled selected>Choisir un service</option>
+              <option value="plomberie">Plomberie</option>
+              <option value="chauffage">Chauffage</option>
+              <option value="depannage">Dépannage urgent</option>
+              <option value="entretien">Entretien / Maintenance</option>
+              <option value="mise-en-service">Mise en service</option>
+              <option value="autre">Autre</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group full">
+          <label for="message">Description du besoin *</label>
+          <textarea id="message" name="message" rows="5" placeholder="Décrivez votre besoin, le type de logement, l'urgence..." required></textarea>
+        </div>
+        <div class="form-submit">
+          <button type="submit" class="btn-primary">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M2 21l21-9L2 3v7l15 2-15 2v7z"/></svg>
+            Envoyer ma demande
+          </button>
+          <p class="form-note">* Champs obligatoires — Réponse garantie sous 24h</p>
+        </div>
+      </form>
     </div>
   </section>
 
