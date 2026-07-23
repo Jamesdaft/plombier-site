@@ -55,7 +55,7 @@ document.querySelectorAll('.service-card, .contact-card, .about-card').forEach(e
 
   // Pane dédié pour le fondu des bords
   map.createPane('isoPane');
-  map.getPane('isoPane').style.filter = 'blur(10px)';
+  map.getPane('isoPane').style.filter = 'blur(18px)';
   map.getPane('isoPane').style.zIndex = '400';
 
   fetch('isochrone.json')
