@@ -31,7 +31,10 @@
       "addressRegion": "Hautes-Alpes",
       "addressCountry": "FR"
     },
-    "areaServed": "Hautes-Alpes",
+    "areaServed": ["Gap","Briançon","Embrun","Guillestre","Veynes","Laragne-Montéglin","Tallard","Chorges","Savines-le-Lac","L'Argentière-la-Bessée","Serre-Chevalier","Vars","Risoul","Hautes-Alpes"],
+    "openingHoursSpecification": [
+      {"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"08:00","closes":"18:00"}
+    ],
     "priceRange": "€€",
     "logo": "img/LOGO.png",
     "slogan": "Des solutions simples, un confort durable"
@@ -246,6 +249,27 @@
     </div>
   </section>
 
+  <!-- ZONES INTERVENTION -->
+  <section class="zones" id="zones">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Zone d'intervention</span>
+        <h2>Je me déplace dans tout le <span>département 05</span></h2>
+        <p>Plombier chauffagiste disponible dans toutes les Hautes-Alpes</p>
+      </div>
+      <div class="zones-grid">
+        <span>Gap</span><span>Briançon</span><span>Embrun</span><span>Guillestre</span>
+        <span>Veynes</span><span>Laragne-Montéglin</span><span>Tallard</span><span>Chorges</span>
+        <span>Savines-le-Lac</span><span>L'Argentière-la-Bessée</span><span>Vallouise-Pelvoux</span>
+        <span>Serre-Chevalier</span><span>Montgenèvre</span><span>Vars</span><span>Risoul</span>
+        <span>Serres</span><span>Aspres-sur-Buëch</span><span>Saint-Bonnet-en-Champsaur</span>
+        <span>Le Monêtier-les-Bains</span><span>Mont-Dauphin</span><span>La Roche-de-Rame</span>
+        <span>Réallon</span><span>Eyguians</span><span>Saint-Étienne-en-Dévoluy</span>
+      </div>
+      <p class="zones-note">Et toutes les communes alentour — <a href="tel:+33771806082">appelez-moi</a> pour vérifier votre secteur</p>
+    </div>
+  </section>
+
   <!-- GALERIE -->
   <section class="gallery" id="galerie">
     <div class="container">
@@ -454,8 +478,16 @@
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
           </div>
           <span class="contact-label">Zone</span>
-          <strong>Hautes-Alpes</strong>
-          <span class="contact-sub">Département 05</span>
+          <strong>Tout le 05</strong>
+          <span class="contact-sub">Hautes-Alpes</span>
+        </div>
+        <div class="contact-card no-link">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg>
+          </div>
+          <span class="contact-label">Horaires</span>
+          <strong>Lun – Sam : 8h à 18h</strong>
+          <span class="contact-sub">Urgences 7j/7</span>
         </div>
       </div>
     </div>
@@ -470,9 +502,43 @@
       </div>
       <p class="footer-slogan">Des solutions simples, un confort durable</p>
       <p class="footer-siret">Eliott Van Holderbeke – SIRET : 992 642 926 00016</p>
-      <p class="footer-copy">© 2026 EPC – Tous droits réservés</p>
+      <p class="footer-copy">© 2026 EPC – Tous droits réservés — <button class="footer-ml-btn" onclick="document.getElementById('modal-ml').classList.add('open')">Mentions légales</button></p>
     </div>
   </footer>
+
+  <!-- MODAL MENTIONS LEGALES -->
+  <div class="modal-overlay" id="modal-ml" onclick="if(event.target===this)this.classList.remove('open')">
+    <div class="modal-box">
+      <button class="modal-close" onclick="document.getElementById('modal-ml').classList.remove('open')" aria-label="Fermer">✕</button>
+      <h2>Mentions légales</h2>
+
+      <h3>Éditeur du site</h3>
+      <p><strong>Eliott Van Holderbeke</strong><br>
+      Entrepreneur Individuel — Plombier Chauffagiste<br>
+      SIRET : 992 642 926 00016<br>
+      Hautes-Alpes (05), France<br>
+      Tél. : 07 71 80 60 82<br>
+      Email : contactepc05@gmail.com</p>
+
+      <h3>Responsable de publication</h3>
+      <p>Eliott Van Holderbeke</p>
+
+      <h3>Hébergement</h3>
+      <p>Netlify, Inc.<br>
+      44 Montgomery Street, Suite 300<br>
+      San Francisco, CA 94104 — États-Unis<br>
+      <a href="https://www.netlify.com" target="_blank" rel="noopener">www.netlify.com</a></p>
+
+      <h3>Propriété intellectuelle</h3>
+      <p>L'ensemble du contenu de ce site (textes, images, logo) est la propriété exclusive d'Eliott Van Holderbeke. Toute reproduction est interdite sans autorisation préalable.</p>
+
+      <h3>Données personnelles</h3>
+      <p>Les informations collectées via le formulaire de contact sont uniquement utilisées pour répondre à vos demandes. Elles ne sont ni cédées, ni vendues à des tiers. Conformément au RGPD, vous disposez d'un droit d'accès, de rectification et de suppression en contactant : contactepc05@gmail.com</p>
+
+      <h3>Cookies</h3>
+      <p>Ce site n'utilise pas de cookies de suivi ou publicitaires.</p>
+    </div>
+  </div>
 
   <!-- BARRE MOBILE FIXE -->
   <div class="mobile-bar">

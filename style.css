@@ -699,6 +699,135 @@ img { max-width: 100%; display: block; }
 }
 
 /* ========================
+   ZONES INTERVENTION
+   ======================== */
+.zones {
+  background: var(--off-white);
+  padding: 100px 0;
+}
+
+.zones-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 28px;
+}
+.zones-grid span {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--blue);
+  background: var(--white);
+  border: 1.5px solid rgba(46,109,164,0.2);
+  padding: 8px 18px;
+  border-radius: 50px;
+  box-shadow: 0 2px 8px rgba(46,109,164,0.08);
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+  cursor: default;
+}
+.zones-grid span:hover {
+  background: var(--blue);
+  color: var(--white);
+  border-color: var(--blue);
+}
+.zones-note {
+  text-align: center;
+  font-size: 0.88rem;
+  color: var(--text-muted);
+}
+.zones-note a {
+  color: var(--blue);
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+/* ========================
+   MENTIONS LEGALES MODAL
+   ======================== */
+.footer-ml-btn {
+  background: none;
+  border: none;
+  color: rgba(255,255,255,0.4);
+  font-size: inherit;
+  cursor: pointer;
+  text-decoration: underline;
+  padding: 0;
+  font-family: inherit;
+  transition: color 0.2s;
+}
+.footer-ml-btn:hover { color: rgba(255,255,255,0.7); }
+
+.modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  z-index: 10000;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  backdrop-filter: blur(4px);
+}
+.modal-overlay.open { display: flex; }
+
+.modal-box {
+  background: var(--white);
+  border-radius: 20px;
+  padding: 48px;
+  max-width: 600px;
+  width: 100%;
+  max-height: 85vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 24px 64px rgba(0,0,0,0.25);
+}
+.modal-box h2 {
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: var(--slate);
+  margin-bottom: 28px;
+  padding-right: 32px;
+}
+.modal-box h3 {
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--blue);
+  margin: 24px 0 8px;
+}
+.modal-box p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+.modal-box a { color: var(--blue); }
+
+.modal-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: var(--off-white);
+  border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  font-size: 1rem;
+  cursor: pointer;
+  color: var(--slate);
+  transition: background 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modal-close:hover { background: #E2E8F0; }
+
+@media (max-width: 640px) {
+  .modal-box { padding: 28px 20px; }
+}
+
+/* ========================
    TEMOIGNAGES
    ======================== */
 .temoignages {
