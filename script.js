@@ -53,16 +53,21 @@ document.querySelectorAll('.service-card, .contact-card, .about-card').forEach(e
     popupAnchor: [0, -40]
   });
 
+  // Pane dédié pour le fondu des bords
+  map.createPane('isoPane');
+  map.getPane('isoPane').style.filter = 'blur(14px)';
+  map.getPane('isoPane').style.zIndex = '400';
+
   fetch('isochrone.json')
     .then(r => r.json())
     .then(data => {
       const iso = L.geoJSON(data, {
+        pane: 'isoPane',
         style: {
-          color: '#2E6DA4',
-          weight: 2,
-          dashArray: '6 4',
+          color: 'transparent',
+          weight: 0,
           fillColor: '#2E6DA4',
-          fillOpacity: 0.18
+          fillOpacity: 0.28
         }
       }).addTo(map);
 
