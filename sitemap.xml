@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <url>
+    <loc>https://plombier-site.taulelle-juliane.workers.dev/</loc>
+    <lastmod>2026-07-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://plombier-site.taulelle-juliane.workers.dev/blog/entretien-chaudiere-hautes-alpes.html</loc>
+    <lastmod>2026-07-23</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://plombier-site.taulelle-juliane.workers.dev/blog/adoucisseur-eau-hautes-alpes.html</loc>
+    <lastmod>2026-07-23</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://plombier-site.taulelle-juliane.workers.dev/blog/pose-poele-granules-hautes-alpes.html</loc>
+    <lastmod>2026-07-23</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://plombier-site.taulelle-juliane.workers.dev/blog/fuite-eau-urgence-hautes-alpes.html</loc>
+    <lastmod>2026-07-23</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://plombier-site.taulelle-juliane.workers.dev/blog/chauffe-eau-en-panne-hautes-alpes.html</loc>
+    <lastmod>2026-07-23</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://plombier-site.taulelle-juliane.workers.dev/blog/pression-chaudiere-hautes-alpes.html</loc>
+    <lastmod>2026-07-23</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+</urlset>

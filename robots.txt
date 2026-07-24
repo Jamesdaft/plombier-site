@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://plombier-site.taulelle-juliane.workers.dev/sitemap.xml
