@@ -76,6 +76,46 @@ document.querySelectorAll('.service-card, .contact-card, .about-card').forEach(e
     });
 })();
 
+// ===== DEVIS FORM (Web3Forms) =====
+(function () {
+  const form = document.getElementById('devisForm');
+  if (!form) return;
+  const msg = document.getElementById('devisFormMessage');
+  const submitBtn = form.querySelector('button[type="submit"]');
+  const originalBtnHTML = submitBtn.innerHTML;
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Envoi en cours...';
+    msg.style.display = 'none';
+
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { Accept: 'application/json' },
+      body: new FormData(form)
+    })
+      .then(res => res.json())
+      .then(data => {
+        msg.textContent = data.success
+          ? 'Merci ! Votre demande a bien été envoyée, réponse sous 24h.'
+          : "Une erreur est survenue, merci de réessayer ou d'appeler directement.";
+        msg.className = 'form-message ' + (data.success ? 'success' : 'error');
+        msg.style.display = 'block';
+        if (data.success) form.reset();
+      })
+      .catch(() => {
+        msg.textContent = "Une erreur est survenue, merci de réessayer ou d'appeler directement.";
+        msg.className = 'form-message error';
+        msg.style.display = 'block';
+      })
+      .finally(() => {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalBtnHTML;
+      });
+  });
+})();
+
 // ===== BLOG CAROUSEL =====
 (function () {
   const track    = document.getElementById('blogTrack');

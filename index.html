@@ -9,7 +9,7 @@
   <meta name="description" content="EPC – Plombier Chauffagiste dans les Hautes-Alpes. Plomberie, chauffage, mise en service, entretien, dépannage tous types d'énergie. Devis gratuit : 07 71 80 60 82." />
   <meta name="keywords" content="plombier, chauffagiste, Hautes-Alpes, dépannage plomberie, chauffage, entretien, EPC, Eliott Van Holderbeke" />
   <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://plombier-site.taulelle-juliane.workers.dev/" />
+  <link rel="canonical" href="https://epc05.fr/" />
   <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
 
   <!-- Google Analytics GA4 — remplacer G-XXXXXXXXXX par l'ID Eliott -->
@@ -59,7 +59,7 @@
   <link rel="apple-touch-icon" href="img/LOGO.png" />
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <link rel="stylesheet" href="https://unpkg.com/leaflet-gesture-handling/dist/leaflet-gesture-handling.min.css" />
-  <link rel="stylesheet" href="style.css?v=12" />
+  <link rel="stylesheet" href="style.css?v=13" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet" />
 </head>
@@ -501,9 +501,10 @@
         <h2>Demande de <span>devis</span></h2>
         <p>Réponse sous 24h, sans engagement</p>
       </div>
-      <form class="devis-form" name="devis" method="POST" netlify data-netlify="true" netlify-honeypot="bot-field">
-        <input type="hidden" name="form-name" value="devis" />
-        <p class="hidden"><label>Ne pas remplir : <input name="bot-field" /></label></p>
+      <form class="devis-form" id="devisForm" name="devis">
+        <input type="hidden" name="access_key" value="6d3bba20-29ad-4e64-8c6d-b38e4149f891" />
+        <input type="hidden" name="subject" value="Nouvelle demande de devis - Site EPC" />
+        <input type="checkbox" name="botcheck" class="hidden" style="display:none;" />
         <div class="form-row">
           <div class="form-group">
             <label for="nom">Nom complet *</label>
@@ -543,6 +544,7 @@
           </button>
           <p class="form-note">* Champs obligatoires — Réponse garantie sous 24h</p>
         </div>
+        <p id="devisFormMessage" class="form-message"></p>
       </form>
     </div>
   </section>
@@ -623,10 +625,10 @@
       <p>Eliott Van Holderbeke</p>
 
       <h3>Hébergement</h3>
-      <p>Netlify, Inc.<br>
-      44 Montgomery Street, Suite 300<br>
-      San Francisco, CA 94104 — États-Unis<br>
-      <a href="https://www.netlify.com" target="_blank" rel="noopener">www.netlify.com</a></p>
+      <p>Cloudflare, Inc.<br>
+      101 Townsend Street<br>
+      San Francisco, CA 94107 — États-Unis<br>
+      <a href="https://www.cloudflare.com" target="_blank" rel="noopener">www.cloudflare.com</a></p>
 
       <h3>Propriété intellectuelle</h3>
       <p>L'ensemble du contenu de ce site (textes, images, logo) est la propriété exclusive d'Eliott Van Holderbeke. Toute reproduction est interdite sans autorisation préalable.</p>

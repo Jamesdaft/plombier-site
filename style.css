@@ -1250,6 +1250,22 @@ img { max-width: 100%; display: block; }
   color: var(--text-muted);
   font-style: italic;
 }
+.form-message {
+  display: none;
+  margin-top: 16px;
+  padding: 12px 16px;
+  border-radius: var(--radius);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+.form-message.success {
+  background: #E6F4EA;
+  color: #1E7A3C;
+}
+.form-message.error {
+  background: #FBEAE8;
+  color: var(--red);
+}
 
 @media (max-width: 640px) {
   .form-row { grid-template-columns: 1fr; }
