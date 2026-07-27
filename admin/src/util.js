@@ -24,5 +24,6 @@ export function frenchDate(isoDate) {
     "juillet", "août", "septembre", "octobre", "novembre", "décembre",
   ];
   const d = new Date(isoDate);
-  return `${months[d.getMonth()]} ${d.getFullYear()}`;
+  const month = months[d.getMonth()];
+  return `${month.charAt(0).toUpperCase()}${month.slice(1)} ${d.getFullYear()}`;
 }
