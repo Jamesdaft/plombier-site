@@ -9,8 +9,43 @@
   </url>
 
   <url>
-    <loc>https://epc05.fr/blog/zzz-test-deploiement-temporaire.html</loc>
-    <lastmod>2026-07-27</lastmod>
+    <loc>https://epc05.fr/blog/entretien-chaudiere-hautes-alpes.html</loc>
+    <lastmod>2026-07-23</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://epc05.fr/blog/adoucisseur-eau-hautes-alpes.html</loc>
+    <lastmod>2026-07-23</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://epc05.fr/blog/pose-poele-granules-hautes-alpes.html</loc>
+    <lastmod>2026-07-23</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://epc05.fr/blog/fuite-eau-urgence-hautes-alpes.html</loc>
+    <lastmod>2026-07-23</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://epc05.fr/blog/chauffe-eau-en-panne-hautes-alpes.html</loc>
+    <lastmod>2026-07-23</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://epc05.fr/blog/pression-chaudiere-hautes-alpes.html</loc>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
   </url>
