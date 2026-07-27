@@ -102,7 +102,21 @@ document.querySelectorAll('.service-card, .contact-card, .about-card').forEach(e
           : "Une erreur est survenue, merci de réessayer ou d'appeler directement.";
         msg.className = 'form-message ' + (data.success ? 'success' : 'error');
         msg.style.display = 'block';
-        if (data.success) form.reset();
+        if (data.success) {
+          // Copie journalisée pour le tableau de bord admin d'Eliott — best-effort,
+          // n'affecte jamais l'envoi réel de la demande (déjà géré par Web3Forms ci-dessus).
+          fetch('https://gestion.epc05.fr/api/devis', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              name: form.nom.value,
+              phone: form.telephone.value,
+              email: form.email.value,
+              message: form.message.value
+            })
+          }).catch(() => {});
+          form.reset();
+        }
       })
       .catch(() => {
         msg.textContent = "Une erreur est survenue, merci de réessayer ou d'appeler directement.";

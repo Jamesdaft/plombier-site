@@ -1,0 +1,27 @@
+name = "epc-admin"
+main = "src/index.js"
+compatibility_date = "2026-07-01"
+
+# Sous-domaine dédié à l'admin, séparé du site principal (site principal non touché).
+# Le custom domain doit être ajouté une fois côté dashboard Cloudflare (zone epc05.fr).
+routes = [
+  { pattern = "gestion.epc05.fr/*", zone_name = "epc05.fr" }
+]
+
+[[d1_databases]]
+binding = "DB"
+database_name = "epc-admin-db"
+database_id = "603b265f-c970-4f42-88fa-fe9eae1afbb1"
+
+[[r2_buckets]]
+binding = "PHOTOS"
+bucket_name = "epc-admin-photos"
+
+# Secrets (à définir via le dashboard Cloudflare > Workers > epc-admin > Settings > Variables and Secrets,
+# jamais via une commande shell pour éviter qu'ils traînent dans l'historique bash) :
+#   ADMIN_PASSWORD_HASH
+#   SESSION_SECRET
+#   GITHUB_TOKEN
+#   GA4_PROPERTY_ID
+#   GA4_SERVICE_ACCOUNT_EMAIL
+#   GA4_SERVICE_ACCOUNT_PRIVATE_KEY
