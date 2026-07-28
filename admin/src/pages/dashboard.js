@@ -1,7 +1,21 @@
-import { escapeHtml } from "../util.js";
+import { escapeHtml, formatBytes } from "../util.js";
 import { renderLayout } from "./layout.js";
 
-export function renderDashboardPage({ stats, statsError, submissions, counts }) {
+const R2_FREE_LIMIT_BYTES = 10 * 1024 * 1024 * 1024; // 10 Go — quota gratuit Cloudflare R2
+
+function renderStorageMeter(storage) {
+  const pct = Math.min(100, (storage.usedBytes / R2_FREE_LIMIT_BYTES) * 100);
+  const severity = pct >= 90 ? "danger" : pct >= 70 ? "warning" : "ok";
+  return `<div class="card">
+    <h2>Stockage des photos (R2)</h2>
+    <div class="meter-track">
+      <div class="meter-fill ${severity}" style="width:${pct.toFixed(1)}%"></div>
+    </div>
+    <p class="muted">${formatBytes(storage.usedBytes)} sur 10 Go utilisés (${pct.toFixed(1)}%) — ${storage.objectCount} photo${storage.objectCount === 1 ? "" : "s"}. Le forfait gratuit Cloudflare R2 s'arrête à 10 Go ; large marge pour des photos de chantier.</p>
+  </div>`;
+}
+
+export function renderDashboardPage({ stats, statsError, submissions, counts, storage }) {
   const statsBlock = statsError
     ? `<p class="error-box">Stats Google Analytics indisponibles : ${escapeHtml(statsError)}</p>`
     : `<div class="stat-grid">
@@ -31,6 +45,7 @@ export function renderDashboardPage({ stats, statsError, submissions, counts }) 
         <div class="stat-tile"><div class="n">${counts.devis}</div><div class="l">Demandes de devis (30j)</div></div>
       </div>
     </div>
+    ${renderStorageMeter(storage)}
     <div class="card">
       <h2>Dernières demandes de devis</h2>
       <table>

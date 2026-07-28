@@ -46,6 +46,22 @@ export async function uploadPhoto(env, { arrayBuffer, contentType, alt }) {
     .run();
 }
 
+/** Calcule l'usage réel du bucket R2 (photos) pour la jauge de stockage du dashboard. */
+export async function getStorageStats(env) {
+  let usedBytes = 0;
+  let objectCount = 0;
+  let cursor;
+  do {
+    const listing = await env.PHOTOS.list({ cursor });
+    for (const obj of listing.objects) {
+      usedBytes += obj.size;
+      objectCount++;
+    }
+    cursor = listing.truncated ? listing.cursor : undefined;
+  } while (cursor);
+  return { usedBytes, objectCount };
+}
+
 /**
  * Supprime une photo : republie d'abord la galerie sans elle, puis seulement si le commit
  * réussit, la retire de R2 et de la base.

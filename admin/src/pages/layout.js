@@ -118,6 +118,17 @@ export function renderLayout({ title, active, body }) {
   }
   .badge.draft { background: #EEE; color: var(--muted); }
   .badge.published { background: #E4F6E9; color: #1E7A3C; }
+  .meter-track {
+    background: #E4EDF5;
+    border-radius: 999px;
+    height: 10px;
+    overflow: hidden;
+    margin: 4px 0 8px;
+  }
+  .meter-fill { height: 100%; border-radius: 999px; }
+  .meter-fill.ok { background: var(--blue); }
+  .meter-fill.warning { background: var(--gold); }
+  .meter-fill.danger { background: var(--red); }
   .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; }
   .stat-tile { background: var(--bg); border-radius: 8px; padding: 14px; text-align: center; }
   .stat-tile .n { font-size: 1.6rem; font-weight: 800; color: var(--blue); }

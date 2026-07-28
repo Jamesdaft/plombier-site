@@ -4,7 +4,7 @@ import { renderDashboardPage } from "./pages/dashboard.js";
 import { renderArticlesListPage, renderArticleEditorPage } from "./pages/articles.js";
 import { renderGalleryPage } from "./pages/gallery.js";
 import { publishArticle, unpublishArticle } from "./publish.js";
-import { uploadPhoto, deletePhoto } from "./photos.js";
+import { uploadPhoto, deletePhoto, getStorageStats } from "./photos.js";
 import { getDashboardStats } from "./ga4.js";
 import { logDevisSubmission, listDevisSubmissions } from "./devis.js";
 import { slugify } from "./util.js";
@@ -95,6 +95,7 @@ async function handleDashboard(env) {
   }
 
   const submissions = await listDevisSubmissions(env, 20);
+  const storage = await getStorageStats(env);
   const { results: articleCountRows } = await env.DB.prepare(
     "SELECT COUNT(*) as n FROM articles WHERE status = 'published'"
   ).all();
@@ -113,6 +114,7 @@ async function handleDashboard(env) {
         photos: photoCountRows[0]?.n ?? 0,
         devis: devisCountRows[0]?.n ?? 0,
       },
+      storage,
     })
   );
 }

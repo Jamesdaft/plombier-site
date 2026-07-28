@@ -18,6 +18,12 @@ export function slugify(title) {
     .replace(/^-+|-+$/g, "");
 }
 
+export function formatBytes(bytes) {
+  if (bytes < 1024 * 1024) return `${(bytes / 1024).toFixed(0)} Ko`;
+  if (bytes < 1024 * 1024 * 1024) return `${(bytes / (1024 * 1024)).toFixed(0)} Mo`;
+  return `${(bytes / (1024 * 1024 * 1024)).toFixed(2)} Go`;
+}
+
 export function frenchDate(isoDate) {
   const months = [
     "janvier", "février", "mars", "avril", "mai", "juin",
